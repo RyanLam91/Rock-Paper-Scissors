@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+	<script>
+		function playGame(){
+
+			varcomChoice = Math.random(0,1);
+
+			if(comChoice <= 0.33)
+				comChoice = "rock";
+			elif(comChoice > 0.33 && comChoice <= 0.66)
+				comChoice = "paper";
+			elif(comChoice >0.66 && comChoice < 1)
+				comChoice = "scissor";
+			else
+
+			var userChoice = prompt("Enter your choice:");
+
+			if (comChoice == userChoice){
+				document.getElementById("CC").innerHTML = "Computer Choice:" + comChoice;
+
+				document.getElementById("UC").innerHTML = "User choice:" + userChoice;
+
+				document.getElementById("R").innerHTML = "It's a tie!";
+			}
+
+			elif((comChoice == "rock" && userChoice == "scissor") || (comChoice == "paper" && userChoice == "rock") || (comChoice == "scissor" && userChoice == "paper")){
+				document.getElementById("CC").innerHTML = "Computer Choice:" + comChoice;
+
+				document.getElementById("UC").innerHTML = "User choice:" + userChoice;
+
+				document.getElementById("R").innerHTML = "You Lose!";
+			}
+
+			elif((comChoice == "scissor" && userChoice == "rock") || (comChoice == "rock" && userChoice == "paper") || (comChoice == "paper" && userChoice == "scissor")){
+				document.getElementById("CC").innerHTML = "Computer Choice:" + comChoice;
+
+				document.getElementById("UC").innerHTML = "User choice:" + userChoice;
+
+				document.getElementById("R").innerHTML = "You Win!";
+			}
+
+			else
+				document.getElementById("R").innerHTML = "Invalid Input!";
+
+		}
+
+	</script>
+</head>
+<body>
+
+	<img src="Images\pict.jpg">
+	<p id="CC"></p>
+	<p id="UC"></p>
+	<p id="R"></p>	
+	<button type="button" onclick="playGame()">Let's Play!</button>
+
+</body>
+</html>
